@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./App.module.scss";
 import sun from "./images/sun.png";
 import moon from "./images/moon.png";
+import { CSSTransition } from "react-transition-group";
 
 function App() {
   const [darkMode, setDarkMode] = React.useState(getInitialMode());
@@ -40,15 +41,22 @@ function App() {
                 onChange={() => setDarkMode(prevMode => !prevMode)}
                 type="checkbox"
                 className={styles.checkbox}
-                id={styles.checkbox} />
-              <label htmlFor="checkbox" />
+                name="switch"
+                 />
+              <label htmlFor="switch"></label>
             </span>
           </div>
         </nav>
         <div className={styles.card}>
           <main>
             <h1>{darkMode ? "Dark Mode" : "Light Mode"}</h1>
-            <img src={darkMode ? moon : sun} alt={darkMode ? "moon picture" : "sun picture"} />
+            <CSSTransition
+            appear={true}
+            timeout={1000}
+            classNames={styles.fade}
+            >
+            <img src={darkMode ? moon : sun} alt={darkMode ? "moon picture" : "sun picture"} className={styles.fade} />
+            </CSSTransition>
           </main>
         </div>
       </div>

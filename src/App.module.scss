@@ -46,24 +46,30 @@
     padding: 0.5em;
     width: 50%;
     height: 60vh;
-    border: 1px solid black;
-    background-color: lightcyan;
+    background-color: lightblue;
     border-radius: 15px;
+
+    img {
+      margin-top: 15px;
+      width: 100%;
+      height: 50vh;
+      object-fit: contain;
+    }
   }
 
-  img {
-    width: 100%;
-    height: 50vh;
-    object-fit: contain;
+  .fade {
+    animation: fadeIn 2s;
   }
 
-  main img {
-    animation: fadein 2s;
-  }
-
-  @keyframes fadein {
-    from { opacity: 0}
-    to   { opacity: 1}
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   .toggle {
@@ -76,7 +82,7 @@
   input[type="checkbox"].checkbox {
     width: 70px;
     height: 15px;
-    background: #555;
+    background: rgb(141, 123, 123);
     position: relative;
     border-radius: 5px;
     -webkit-appearance: none;
