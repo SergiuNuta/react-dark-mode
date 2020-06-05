@@ -48,7 +48,7 @@ function App() {
         <div className={styles.card}>
           <main>
             <h1>{darkMode ? "Dark Mode" : "Light Mode"}</h1>
-            <img src={darkMode ? moon : sun} />
+            <img src={darkMode ? moon : sun} alt={darkMode ? "moon picture" : "sun picture"} />
           </main>
         </div>
       </div>
